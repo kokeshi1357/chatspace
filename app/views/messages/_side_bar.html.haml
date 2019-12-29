@@ -5,11 +5,11 @@
         ken
       %ul.side-bar__top__box__icons
         %li.side-bar__top__box__icons__edit
-          %a{:href => "#"}
-            %i.fa.fa-edit
+          =link_to "#" do
+            = icon('fa', 'edit')
         %li.side-bar__top__box__icons__new-group
-          %a{:href => "#"}
-            %i.fa.fa-cog
+          =link_to "#" do
+            = icon('fa', 'cog')
   .side-bar__bottom
     .side-bar__bottom__group
       .side-bar__bottom__group__name

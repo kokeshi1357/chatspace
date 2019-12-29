@@ -6,10 +6,9 @@
       .chat-main__head__left-box__name-list
         member：
         %p ken
-    %a{:href => "#"}
-      .chat-main__head__edit-btn 
-        Edit
 
+    = link_to "Edit", "#", class: "chat-main__head__edit-btn"
+      
   .chat-main__middle
     .chat-main__middle__message
       .chat-main__middle__message__info
@@ -28,5 +27,4 @@
         %label{class: "chat-main__bottom__content__input__image"}
           = icon('fas', 'image')
           %input{type: "file", class: "chat-main__bottom__content__input__image__file"}
-      .chat-main__bottom__content__submit
-        Send
+      .chat-main__bottom__content__submit Send
