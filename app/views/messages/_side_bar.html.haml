@@ -1,14 +1,14 @@
 .side-bar
   .side-bar__top
     .side-bar__top__box
-      .side-bar__top__box__name
-        ken
+      %h3.side-bar__top__box__name
+        = current_user.name
       %ul.side-bar__top__box__icons
         %li.side-bar__top__box__icons__edit
           =link_to "#" do
             = icon('fa', 'edit')
         %li.side-bar__top__box__icons__new-group
-          =link_to "#" do
+          =link_to edit_user_path(current_user) do
             = icon('fa', 'cog')
   .side-bar__bottom
     .side-bar__bottom__group
