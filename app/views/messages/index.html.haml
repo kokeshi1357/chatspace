@@ -1,3 +1,28 @@
 .wrapper 
   =render "side_bar"
-  =render "main_chat"
+  -# = render "main_chat"
+
+  .chat-main
+    .chat-main__head
+      .chat-main__head__left-box
+        .group-name
+          = @group.name
+        .user-name
+          member：
+          - @group.users.each do |user|
+            =user.name
+
+      = link_to "Edit", edit_group_path(@group), class: "chat-main__head__edit-btn"
+        
+    .chat-main__middle
+      =render @messages
+
+    .chat-main__bottom
+      .form
+        = form_for [@group, @message] do |f|
+          .input
+            = f.text_field :content, class: 'input__message', placeholder: 'type a message'
+            = f.label :image, class: 'input__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
