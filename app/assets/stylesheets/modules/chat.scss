@@ -132,15 +132,13 @@
           width: calc(100vw - 500px);
           margin-right: 15px;
           position: relative;
-          background-color: $often-color;
-  
+          background-color: $often-color; 
             &__message{
             width: 100%;
             height: 50px;
             line-height: 50px;
             padding: 0 40px 0 10px;
             border-style: none;
-  
             }        
             &__image{
             font-size: 1.3rem;
