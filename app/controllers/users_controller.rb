@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+
+ def index
+   return nil if params[:keyword] == ""   #paramsの値がからだった場合終了 
+   @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
+   respond_to do |format|   #入力された値を含むかつ、ログインしているユーザーのidは除外するという条件
+     format.html
+     format.json
+   end
+ end
+
  def edit
  end
 
