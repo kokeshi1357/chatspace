@@ -55,8 +55,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-  
-
 group  :production do
   gem 'unicorn', '5.4.1'
 end
